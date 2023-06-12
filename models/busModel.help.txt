@@ -1,0 +1,13 @@
+El código que muestras es un fragmento del modelo `BusesModel` en PHP. A continuación, te explicaré qué hace cada función:
+
+1. `__construct()`: Es el método constructor de la clase `BusesModel`. Crea una instancia de la clase `db` para establecer la conexión a la base de datos. Esto se hace al inicializar la propiedad `$db` con un nuevo objeto `db`.
+
+2. `obtenerBuses()`: Realiza una consulta SELECT para obtener todos los registros de la tabla `Buses`. Prepara la consulta SQL, la ejecuta y devuelve los resultados en forma de array asociativo usando el método `fetchAll(PDO::FETCH_ASSOC)`.
+
+3. `obtenerBusPorId($id)`: Realiza una consulta SELECT para obtener un bus específico de la tabla `Buses` según su ID. La consulta utiliza un parámetro vinculado `:id` para evitar la inyección de SQL. Prepara la consulta SQL, vincula el valor del parámetro `:id` con el valor de la variable `$id`, ejecuta la consulta y devuelve el resultado en forma de array asociativo usando el método `fetch(PDO::FETCH_ASSOC)`.
+
+4. `borrarBus($id)`: Realiza una consulta DELETE para eliminar un bus de la tabla `Buses` según su ID. Al igual que en las funciones anteriores, utiliza un parámetro vinculado `:id` para evitar la inyección de SQL. Prepara la consulta SQL, vincula el valor del parámetro `:id` con el valor de la variable `$id`, ejecuta la consulta y devuelve el resultado de la ejecución (`true` si se eliminó correctamente, o `false` si ocurrió algún error).
+
+5. `insertarBus($matricula, $marca, $modelo, $año, $capacidad_pasajeros, $color, $tipo_combustible, $kilometraje, $fecha_ult_mantenimiento, $disponible)`: Ejemplo de un método para insertar un nuevo bus en la tabla `Buses`. La consulta INSERT INTO se utiliza para agregar un nuevo registro con los valores proporcionados en los parámetros. Al igual que en las funciones anteriores, se utilizan parámetros vinculados para evitar la inyección de SQL. Prepara la consulta SQL, vincula cada parámetro con su valor correspondiente, ejecuta la consulta y devuelve el resultado de la ejecución (`true` si se insertó correctamente, o `false` si ocurrió algún error).
+
+Ten en cuenta que este código solo muestra una parte del modelo `BusesModel` y se asume que existen otras funciones relacionadas con el modelo, como actualizar registros, realizar consultas más específicas, etc.
