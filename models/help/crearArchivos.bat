@@ -1,0 +1,1 @@
+echo. > Linea.php && echo. > Omnibus.php && echo. > Horario.php && echo. > Destino.php && echo. > Ruta.php && echo. > Reserva.php && echo. > PrecioKm.php && echo. > Pasajero.php && echo. > Movimiento.php
