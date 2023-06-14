@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+/* font-family: 'Kanit', sans-serif; */
+
+
+:root{
+    --main-font: 'Kanit', sans-serif;
+    --main-color:rgb(179, 179, 179);
+    --time: .3s;
+}
+
+*{
+    font-family: var(--main-font);
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.header{
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    height: 80px;
+    width: 100%;
+}
+
+.header-logo{
+    display: flex;
+    margin:0px 20px;
+}
+.header-logo-bar{
+    display: flex;
+}
+.header-links-ul{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(139, 226, 168);
+}
+.header-links{
+    display: none;
+    padding: 10px;
+    position: absolute;
+    background-color: red;
+    left: 0px;
+    top: 80px;
+    height: calc(100vh - 80px);
+}
+.header-links-open{
+    display: flex;
+}
+
+.header-btns{
+    display: flex;
+}
+
+.header-btns button{
+   margin: 2px;
+}
+.header-search-form-open{
+    display: flex !important;
+}
+.header-search-form{
+    display: none;
+    width: 100vw;
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    height: 45px;
+    padding: 3px;
+    background-color: red;
+    border: none;
+    overflow: hidden;
+}
+.header-search-input{
+    border: none;
+    height:100%;
+    outline: none;
+    width: 96%;
+}
+.header-search-btn{
+    width: 3%;
+    height:100%;
+    margin: 0px !important;
+    background-color: blue;
+}

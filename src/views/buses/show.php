@@ -1,6 +1,8 @@
 <?php
-    require_once("c://xampp/htdocs/via_uy/views/partials/head.php");
-    require_once("c://xampp/htdocs/via_uy/controllers/busesController.php");
+    $dir= "c://xampp/htdocs/via_uy/";
+
+    require_once($dir."src/views/partials/head.php");
+    require_once($dir."src/controllers/busesController.php");
     $obj = new busesController();
     $date = $obj->show($_GET['id']);
 ?>
@@ -47,5 +49,5 @@
 
 
 <?php
-    require_once("c://xampp/htdocs/via_uy/views/partials/footer.php")
+    require_once($dir."src/views/partials/footer.php");
 ?>

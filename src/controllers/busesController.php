@@ -1,8 +1,9 @@
 <?php
+
     class busesController{
         private $model;
         public function __construct(){
-            require_once('c://xampp/htdocs/via_uy/models/busesModel.php');
+            require_once('c://xampp/htdocs/via_uy/src/models/busesModel.php');
             $this->model =  new busesModel();
         }
         public function guardar($modelo) {

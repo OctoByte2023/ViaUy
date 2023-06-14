@@ -1,12 +1,13 @@
 <?php
-    require_once("c://xampp/htdocs/via_uy/views/partials/head.php");
+    $dir= "c://xampp/htdocs/via_uy/";
+    require_once($dir."src/views/partials/head.php");
 ?>
 
 
-    <a href="/via_uy/views/buses/create.php" class="btn btn-primary" >Agregar nuevo usuario</a>
+    <a href="/via_uy/src/views/buses/create.php" class="btn btn-primary" >Agregar nuevo bus</a>
 
 
 
 <?php
-    require_once("c://xampp/htdocs/via_uy/views/partials/footer.php")
+    require_once($dir."src/views/partials/footer.php");
 ?>

@@ -1,12 +1,14 @@
 <?php
-    require_once("c://xampp/htdocs/via_uy/views/partials/head.php");
-    require_once("c://xampp/htdocs/via_uy/controllers/busesController.php");
+    $dir= "c://xampp/htdocs/via_uy/";
+
+    require_once($dir."src/views/partials/head.php");
+    require_once($dir."src/controllers/busesController.php");
     $obj = new busesController();
     $rows = $obj->index();
 ?>
 
 <section class="mb-3">
-    <a href="/via_uy/view/buses/create.php" class="btn btn-primary">Agregar nuevo Bus</a>
+    <a href="/via_uy/src/view/buses/create.php" class="btn btn-primary">Agregar nuevo Bus</a>
 </section>
 <table class="table">
     <thead>
@@ -56,5 +58,5 @@
 </table>
 
 <?php
-    require_once("c://xampp/htdocs/via_uy/views/partials/footer.php")
+    require_once($dir."src/views/partials/footer.php");
 ?>
