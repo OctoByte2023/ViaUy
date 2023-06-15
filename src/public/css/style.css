@@ -4,10 +4,15 @@
 
 :root{
     --main-font: 'Kanit', sans-serif;
-    --main-color:red;
+    --main-font-color:rgb(58, 58, 58);
+    --main-color:rgb(236, 236, 236);
+
+    --main-color-hover:rgb(40, 118, 207);
     --time: .3s;
 }
-
+a{
+    color: var(--main-font-color);
+}
 *{  
     font-family: var(--main-font);
     font-size: 20px;
@@ -28,7 +33,7 @@ button{
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    height: 802px;
+    height: 80px;
     width: 100%;
 }
 
@@ -36,25 +41,41 @@ button{
     display: flex;
     margin:0px 20px;
 }
+.header-logo a{
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.2em;
+}
 .header-logo-bar{
     display: flex;
 }
 .header-links-ul{
     display: flex;
     flex-direction: column;
-    background-color: rgb(139, 226, 168);
 }
 .header-links{
-    display: none;
-    padding: 10px;
+    z-index: 400 !important;
+    display: flex;
     position: absolute;
-    background-color: rgb(219, 102, 102);
-    left: 0px;
+    background-color: var(--main-color);
+    left: -200px;
     top: 80px;
+    transition: all var(--time) ease;
     height: calc(100vh - 80px);
 }
+.header-links-ul li a{
+    width: 100%;
+    padding: 20px 40px;
+    display: inline-block;
+    font-weight: 900;
+    transition: all var(--time) ease;
+}
+.header-links-ul li a:hover{
+    color: #fff;
+    background-color: var(--main-color-hover);
+}
 .header-links-open{
-    display: flex;
+    left: 0px;
 }
 
 .header-btns{
@@ -65,17 +86,20 @@ button{
    margin: 2px;
 }
 .header-search-form-open{
-    display: flex !important;
+    height: 45px !important;
+    padding: 5px 0px !important;
 }
 .header-search-form{
-    display: none;
-    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    transition: all var(--time) ease;
+    width: 100%;
     position: absolute;
     top: 80px;
     left: 0px;
-    height: 45px;
-    padding: 3px;
-    background-color: red;
+    height: 0px;
+    overflow: hidden;
+    background-color: var(--main-color);
     border: none;
     overflow: hidden;
 }
@@ -83,11 +107,9 @@ button{
     border: none;
     height:100%;
     outline: none;
-    width: 96%;
+    width: 90%;
 }
 .header-search-btn{
-    width: 3%;
     height:100%;
     margin: 0px !important;
-    background-color: blue;
 }

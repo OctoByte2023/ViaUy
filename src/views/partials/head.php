@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ViaUy</title>
+    <link rel="stylesheet" href="/via_uy/src/public/css/style.css">
     <link rel="stylesheet" href="/via_uy/src/public/css/pre.css">
-    <link rel="stylesheet" href="/via_uy/src/public/css/styles.css">
     <script src="https://kit.fontawesome.com/d1b7ca4fc4.js" crossorigin="anonymous"></script>
   </head>
   <body>
@@ -21,7 +21,7 @@
           <i class="fa-solid fa-bars"></i>  
         </button>
         <div class="header-logo">
-        <a href="/via_uy" class="header-logo-a">ViaUy</a>
+        <a href="/via_uy" class="header-logo-a">Via<span class="blue-c" >Uy</span></a>
       </div>
       </div>
       <nav class="header-links" id="header-links">
@@ -35,7 +35,7 @@
       
       <div class="header-btns">
       <form class="header-search-form" id="header-search-form">
-        <input placeholder="Buscar..." type="search" class="header-search-input" id="header-search-input">
+        <input placeholder="Buscar..." type="search" class="header-search-input normal-input" id="header-search-input">
         <button class="header-search-btn">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>

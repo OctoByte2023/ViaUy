@@ -19,6 +19,9 @@
 .normal-btn:hover{
     filter: brightness(0.8);
 }
+.blue-c{
+    color: rgb(51, 87, 153) ;
+}
 .save{
     color: #fff !important;
     background-color: rgb(34, 177, 34) !important;
@@ -38,7 +41,7 @@
 .normal-input{
     transition: all var(--time) ease;
     background-color: var(--input-bg);
-    border: 1px solid var(--input-b);
+    border: 0px solid var(--input-b);
     border-radius: var(--radius);
     color: var(--input-c);
     padding: 2px;
