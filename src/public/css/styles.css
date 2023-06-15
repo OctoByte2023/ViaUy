@@ -4,11 +4,11 @@
 
 :root{
     --main-font: 'Kanit', sans-serif;
-    --main-color:rgb(179, 179, 179);
+    --main-color:red;
     --time: .3s;
 }
 
-*{
+*{  
     font-family: var(--main-font);
     font-size: 20px;
     padding: 0;
@@ -28,7 +28,7 @@ button{
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    height: 80px;
+    height: 802px;
     width: 100%;
 }
 
@@ -48,7 +48,7 @@ button{
     display: none;
     padding: 10px;
     position: absolute;
-    background-color: red;
+    background-color: rgb(219, 102, 102);
     left: 0px;
     top: 80px;
     height: calc(100vh - 80px);

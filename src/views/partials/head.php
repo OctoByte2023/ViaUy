@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ViaUy</title>
+    <link rel="stylesheet" href="/via_uy/src/public/css/pre.css">
     <link rel="stylesheet" href="/via_uy/src/public/css/styles.css">
     <script src="https://kit.fontawesome.com/d1b7ca4fc4.js" crossorigin="anonymous"></script>
   </head>

@@ -7,10 +7,10 @@
 <form action="store.php" method="POST" autocomplate="off">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Modelo del Bus</label>
-    <input type="text" required name="modelo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input type="text" required name="modelo" class="normal-input" id="exampleInputEmail1" aria-describedby="emailHelp">
   </div>
-  <button type="submit" class="btn btn-primary">Guardar</button>
-  <a href="index.php" class="btn btn-danger">Cancelar</a>
+  <button type="submit" class="normal-btn success">Guardar</button>
+  <a href="index.php" class="normal-btn danger">Cancelar</a>
 </form>
 
 

@@ -1,0 +1,50 @@
+:root{
+    --input-b:rgb(104, 104, 104);
+    --input-c:rgb(51, 51, 51);
+    --input-bg:rgb(241, 241, 241);
+
+    --input-f-bg:rgb(233, 233, 233);
+
+
+    --radius: 5px;
+}
+
+.normal-btn{
+    background-color:var(--main-color);
+    padding: 2px 10px;
+    display: inline-block;
+    border-radius: var(--radius);
+    transition: filter var(--time) ease; 
+}
+.normal-btn:hover{
+    filter: brightness(0.8);
+}
+.save{
+    color: #fff !important;
+    background-color: rgb(34, 177, 34) !important;
+}
+
+.success{
+    color: #fff !important;
+    background-color: rgb(29, 85, 206) !important;
+}
+
+
+.danger{
+    color: #fff !important;
+    background-color: rgb(206, 29, 29) !important;
+}   
+
+.normal-input{
+    transition: all var(--time) ease;
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-b);
+    border-radius: var(--radius);
+    color: var(--input-c);
+    padding: 2px;
+}
+
+.normal-input:focus{
+    background-color: var(--input-f-bg);
+    outline: none;
+}

@@ -4,7 +4,7 @@
 ?>
 
 
-    <a href="/via_uy/src/views/buses/create.php" class="btn btn-primary" >Agregar nuevo bus</a>
+    <a href="/via_uy/src/views/buses/create.php" class="normal-btn success" >Agregar nuevo bus</a>
 
 
 
