@@ -10,8 +10,10 @@
 <form action="update.php" method="post" autocomplete="off">
     <h2>Modificando bus</h2>
 
-    <label for="">id--<?= $bus['id']?></label>
-    <input type="text" name="modelo" value="<?= $bus['modelo']?>">
+    <label for="">id: <?= $bus['id']?></label>
+    <br>
+    <input type="text" name="modelo" class="normal-input" value="<?= $bus['modelo']?>">
+    <br>
     <input type="hidden" name="id" value="<?= $bus['id']?>">
     <input type="submit" class="normal-btn success" value="Actualizar">
     <a href="show.php?id=<?= $bus['id']?>" class="normal-btn danger" >Cancelar</a>

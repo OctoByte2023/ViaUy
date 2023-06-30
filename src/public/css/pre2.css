@@ -9,7 +9,9 @@
 
     --radius: 5px;
 }
-
+button{
+    border: none;
+}
 .normal-btn{
     background-color:var(--main-color);
     padding: 2px 10px;
@@ -53,3 +55,4 @@
     border-color: var(--input-b-focus);
     outline: none;
 }
+
