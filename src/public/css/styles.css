@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
 /* font-family: 'Kanit', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* font-family: 'Poppins', sans-serif; */
 
 
 :root{
-    --main-font: 'Kanit', sans-serif;
+    --main-font: 'Poppins', sans-serif;
     --main-font-color:rgb(58, 58, 58);
-    --main-color:rgb(236, 236, 236);
-
+    --main-color:rgb(255, 255, 255);
+    --main-a-h-color:#1b5f9e;
+    --color1:#3093EE;
     --main-color-hover:rgb(40, 118, 207);
     --time: .3s;
 }
@@ -43,7 +46,6 @@ button{
 }
 .header-logo a{
     font-weight: 900;
-    text-transform: uppercase;
     font-size: 1.2em;
 }
 .header-logo-bar{
@@ -56,16 +58,21 @@ button{
 .header-links{
     z-index: 400 !important;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     position: absolute;
     background-color: var(--main-color);
-    left: -200px;
+    left: -2000px;
     top: 80px;
     transition: all var(--time) ease;
     height: calc(100vh - 80px);
 }
+.header-ul-bars{
+    display: none;
+}
 .header-links-ul li a{
     width: 100%;
-    padding: 20px 40px;
+    padding: 20px 20px;
     display: inline-block;
     font-weight: 900;
     transition: all var(--time) ease;
@@ -77,19 +84,37 @@ button{
 .header-links-open{
     left: 0px;
 }
-
+.header-links-social{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+.header-links-social a:hover{
+    color: var(--main-a-h-color);
+}
+.header-links-social li{
+    padding-right: 30px;
+}
+.header-links-social li ul{
+    display: flex;
+}
+.header-links-social li ul li{
+    padding: 0 10px;
+}
 .header-btns{
     display: flex;
 }
 
 .header-btns button{
-   margin: 2px;
+   margin:0px 10px;
 }
 .header-search-form-open{
     height: 45px !important;
-    padding: 5px 0px !important;
+    padding: 5px 5px !important;
 }
 .header-search-form{
+    padding: 0px 5px;
     display: flex;
     justify-content: space-around;
     transition: all var(--time) ease;
@@ -107,9 +132,10 @@ button{
     border: none;
     height:100%;
     outline: none;
-    width: 90%;
+    width: 95%;
 }
 .header-search-btn{
     height:100%;
+    padding: 0px 10px;
     margin: 0px !important;
 }

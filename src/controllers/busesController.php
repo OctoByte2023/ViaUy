@@ -35,7 +35,21 @@
             }
         }
         
+        public function update($id, $nombre) {
+            if ($this->model->update($id, $nombre)) {
+                header("Location: show.php?id=" . $id);
+            } else {
+                header("Location: index.php");
+            }
+        }        
 
-
+        public function delete($id) {
+            if ($this->model->delete($id)) {
+                header("Location: index.php");
+            } else {
+                header("Location: show.php?id=" . $id);
+            }
+        }
+        
     }
 ?>

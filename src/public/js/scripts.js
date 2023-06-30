@@ -4,6 +4,7 @@ const headerBars = $("#header-bars");
 queEs = false;
 
 $("#header-bars").on("click", openHeaderMenu);
+$("#header-ul-bars").on("click", openHeaderMenu);
 $("#header-btns-search").on("click", openHeaderSearch);
 
 

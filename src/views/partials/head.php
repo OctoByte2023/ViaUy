@@ -4,8 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ViaUy</title>
-    <link rel="stylesheet" href="/via_uy/src/public/css/style.css">
-    <link rel="stylesheet" href="/via_uy/src/public/css/pre.css">
+    <link rel="stylesheet" href="/via_uy/src/public/css/styles.css">
+    <link rel="stylesheet" href="/via_uy/src/public/css/pre2.css">
+    <link rel="stylesheet" href="/via_uy/src/public/css/responsive2.css">
     <script src="https://kit.fontawesome.com/d1b7ca4fc4.js" crossorigin="anonymous"></script>
   </head>
   <body>
@@ -26,10 +27,25 @@
       </div>
       <nav class="header-links" id="header-links">
         <ul class="header-links-ul">
+          <li class="header-links-li">
+            <button class="header-ul-bars" id="header-ul-bars">
+              <i class="fa-solid fa-x"></i>  
+            </button>
+          </li>
           <li class="header-links-li"><a href="">Inicio</a></li>
           <li class="header-links-li"><a href="">Ayuda</a></li>
           <li class="header-links-li"><a href="">Buses</a></li>
           <li class="header-links-li"><a href="">Lineas</a></li>
+        </ul>
+        <ul class="header-links-social">
+          <li class="header-links-li"><a href="">www.viauy.com</a></li>
+          <li class="header-links-li">
+            <ul>
+              <li class="header-links-li"><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+              <li class="header-links-li"><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
+              <li class="header-links-li"><a href=""><i class="fa-brands fa-linkedin-in"></i></a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
       

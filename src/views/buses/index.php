@@ -27,6 +27,7 @@
                     <th>
                         <a href="show.php?id=<?= $row[0]?>" class="normal-btn save">Ver</a>
                         <a href="edit.php?id=<?= $row[0]?>" class="normal-btn success">Modificar</a>
+                        <a href="delete.php?id=<?= $row[0]?>" class="normal-btn danger">Eliminar</a>
                     </th>
                 </tr>
             <?php endforeach; ?>

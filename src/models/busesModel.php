@@ -35,6 +35,24 @@
                 return false;
             }
         }        
+        public function update($id, $modelo) {
+            $statement = $this->PDO->prepare("UPDATE buses SET modelo = :modelo WHERE id = :id");
+            $statement->bindParam(":modelo", $modelo);
+            $statement->bindParam(":id", $id);
         
+            if ($statement->execute()) {
+                return $id;
+            } else {
+                return false;
+            }
+        }
+        
+        public function delete($id) {
+            $statement = $this->PDO->prepare("DELETE FROM buses WHERE id = :id");
+            $statement->bindParam(":id", $id);
+        
+            return $statement->execute();
+        }        
+
     }
 ?>

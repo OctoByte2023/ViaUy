@@ -1,0 +1,36 @@
+@media screen and (max-width: 500px) {
+   .header-links{
+        top: 0px;
+        height: 100vh;
+   }
+   .header-ul-bars:hover{
+        color: var(--main-a-h-color);
+   }
+    .header-ul-bars{
+        display: inline;
+        padding: 20px 20px;
+        color: var(--main-color);
+    }
+    .header-links-open{
+        width: 100vw;
+        background-color: var(--color1);
+    }
+    .header-links-ul{
+        width: 100%;
+    }
+    .header-links-ul li a{
+        color: var(--main-color);
+        text-transform: uppercase;
+    }
+    .header-links-ul li a:hover{
+        color: var(--main-a-h-color);
+        background-color: var(--color1) !important;
+        letter-spacing: 2px !important;
+    }
+    .header-links-social a:hover{
+        color: var(--main-a-h-color);
+    }
+    .header-links-social a{
+        color: var(--main-color);
+    }
+}
