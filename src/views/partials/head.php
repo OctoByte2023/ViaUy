@@ -1,19 +1,18 @@
+<?php
+       session_start();
+?>
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ViaUy</title>
-    <link rel="stylesheet" href="/via_uy/src/public/css/style.css">
-    <link rel="stylesheet" href="/via_uy/src/public/css/pre2.css">
+    <link rel="stylesheet" href="/via_uy/src/public/css/styles.css">
+    <link rel="stylesheet" href="/via_uy/src/public/css/pre.css">
     <link rel="stylesheet" href="/via_uy/src/public/css/responsive2.css">
     <script src="https://kit.fontawesome.com/d1b7ca4fc4.js" crossorigin="anonymous"></script>
   </head>
   <body>
-
-
-
-
 
     <header class="header">
       <div class="header-logo-bar">
@@ -63,9 +62,15 @@
           <i class="fa-regular fa-user"></i>
         </button>
         <div class="user-options" id="user-options">
-          <a href=""><i class="fa-solid fa-right-to-bracket"></i> </i>Iniciar Sesion</a>
-          <a href=""><i class="fa-solid fa-user-plus"></i> Registrarse</a>
+        <?php if (isset($_SESSION['user_id'])): ?>
+          <p><?= $_SESSION['user_email']?></p>
+          <a href="/via_uy/src/views/user/logout.php"><i class="fa-solid fa-sign-out"></i> Cerrar Sesión</a>
+        <?php else: ?>
+          <a href="/via_uy/src/views/user/login.php"><i class="fa-solid fa-right-to-bracket"></i> Iniciar Sesión</a>
+          <a href="/via_uy/src/views/user/signup.php"><i class="fa-solid fa-user-plus"></i> Registrarse</a>
+        <?php endif; ?>
         </div>
+
       </div>
 
     </header>

@@ -170,3 +170,71 @@ button{
     padding: 20px;
 }
 /* user options end */
+
+
+
+/* login start */
+.login-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.login-container p{
+    font-size: .8em;
+}
+.login-container p a{
+    color: var(--color1);
+    font-size: 1em;
+    text-decoration: underline;
+}
+.login-container p a:hover{
+    color: var(--main-a-h-color);
+}
+.login-form{
+    display: flex;
+    flex-direction: column;    
+    width: 300px;
+    padding: 20px 0px;
+}
+.login-input{
+    border-radius: 4px;
+    border: 1px solid var(--main-font-color);
+    color: var(--main-font-color);
+    padding: 5px 10px;
+    font-size: .8em;
+}
+.login-input:focus{
+    color: var(--main-a-h-color);
+    outline: none;
+    border-color: var(--main-a-h-color);
+}
+.login-form input[type=submit]{
+    margin-top: 15px;
+    background-color: var(--color1);
+    color: var(--main-color);
+    border-radius: 4px;
+    border: 1px solid var(--color1);
+    padding: 5px;
+    cursor: pointer;  
+    transition: all var(--time);
+}
+.login-form input[type=submit]:hover{
+    background-color: var(--main-a-h-color);
+    border-color: var(--main-a-h-color);
+}
+.login-form label{
+    margin-top: 5px;
+    color: var(--main-font-color);
+}
+.login-form-title{
+    font-size: 1.6em;
+}
+/* login end */
+
+
+
+
+
+
+

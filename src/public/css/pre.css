@@ -56,3 +56,9 @@ button{
     outline: none;
 }
 
+.message-error{
+    color: rgb(250, 128, 128);
+}
+.message-success{
+    color: rgb(128, 250, 148);
+}
