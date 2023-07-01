@@ -63,7 +63,7 @@
         </button>
         <div class="user-options" id="user-options">
         <?php if (isset($_SESSION['user_id'])): ?>
-          <p><?= $_SESSION['user_email']?></p>
+          <p><?= $_SESSION['user_name']?></p>
           <a href="/via_uy/src/views/user/logout.php"><i class="fa-solid fa-sign-out"></i> Cerrar Sesión</a>
         <?php else: ?>
           <a href="/via_uy/src/views/user/login.php"><i class="fa-solid fa-right-to-bracket"></i> Iniciar Sesión</a>
