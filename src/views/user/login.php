@@ -1,50 +1,16 @@
 <?php
 $dir = "c://xampp/htdocs/via_uy/";
-
+require_once($dir.'/src/controllers/userController.php');
 require_once($dir . "src/views/partials/head.php");
-
-
 if (isset($_SESSION['user_id'])) {
-    header('Location: /via_uy/src/views/buses/create.php');
+    header('Location: /via_uy');
+    exit();
 }
-require_once($dir . '/config/db.php');
 
-$db = new db();
-$conn = $db->conexion();
+UserController::handleLogin();
+$message = UserController::handleLogin();
 
-if (!empty($_POST['email']) && !empty($_POST['password'])) {
-    $loginInput = $_POST['email'];
-    $isEmail = filter_var($loginInput, FILTER_VALIDATE_EMAIL);
-
-    if ($isEmail) {
-        // Login con email
-        $records = $conn->prepare('SELECT id, email, password FROM users WHERE email = :loginInput');
-        $records->bindParam(':loginInput', $loginInput);
-        $records->execute();
-    } else {
-        // Login con nombre de usuario
-        $username = '@' . $loginInput;
-        $records = $conn->prepare('SELECT id, email, password FROM users WHERE username = :username');
-        $records->bindParam(':username', $username);
-        $records->execute();
-    }
-
-    $results = $records->fetch(PDO::FETCH_ASSOC);
-
-    $message = '';
-
-    if (is_array($results) && count($results) > 0 && password_verify($_POST['password'], $results['password'])) {
-        $_SESSION['user_id'] = $results['id'];
-        $_SESSION['user_email'] = $results['email'];
-        $_SESSION['user_name'] = $username;
-        header('Location: /via_uy/src/views/buses/create.php');
-        exit;
-    } else {
-        $message = '<i class="message-error">Email o contraseña incorrecta</i>';
-    }
-}
 ?>
-
 <section class="login-container">
     <form action="login.php" class="login-form" method="POST" autocomplete="off">
         <h2 class="login-form-title">Iniciar Sesion</h2>
