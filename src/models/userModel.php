@@ -34,5 +34,40 @@ class UserModel {
 
         return $stmt->execute();
     }
+    public function index() {
+        $statement = $this->conn->prepare("SELECT * FROM users");
+        
+        if ($statement->execute()) {
+            return $statement->fetchAll();
+        } else {
+            return false;
+        }
+    }
+    public function show($id) {
+        $statement = $this->conn->prepare("SELECT * FROM users WHERE id = :id LIMIT 1");
+        $statement->bindParam(":id", $id, PDO::PARAM_INT);
+        $statement->execute();
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+    
+        return ($result !== false) ? $result : false;
+    }
+    public function update($id, $esAdmin) {
+        $statement = $this->conn->prepare("UPDATE users SET esAdmin = :esAdmin WHERE id = :id");
+        $statement->bindParam(":esAdmin", $esAdmin);
+        $statement->bindParam(":id", $id);
+    
+        if ($statement->execute()) {
+            return $id;
+        } else {
+            return false;
+        }
+    }
+    
+    public function delete($id) {
+        $statement = $this->conn->prepare("DELETE FROM users WHERE id = :id");
+        $statement->bindParam(":id", $id);
+    
+        return $statement->execute();
+    }    
 }
 ?>

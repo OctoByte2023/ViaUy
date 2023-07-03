@@ -197,7 +197,16 @@ button{
     width: 300px;
     padding: 20px 0px;
 }
+.toggle-password-l{
+    position: fixed;
+    height: 40px;
+    margin: 0px 10px;
+}
+.toggle-password{
+    display: none;
+}
 .login-input{
+    width: 100% !important;
     border-radius: 4px;
     border: 1px solid var(--main-font-color);
     color: var(--main-font-color);

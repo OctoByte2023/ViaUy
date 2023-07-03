@@ -63,8 +63,11 @@
         </button>
         <div class="user-options" id="user-options">
         <?php if (isset($_SESSION['user_id'])): ?>
-          <p><?= $_SESSION['user_name']?></p>
+          <a href="/via_uy/src/views/user/profile.php" title="<?= $_SESSION['user_name']?>"><?= $_SESSION['user_name']?></a> <br>
           <a href="/via_uy/src/views/user/logout.php"><i class="fa-solid fa-sign-out"></i> Cerrar Sesión</a>
+          <?php if ($_SESSION['esAdmin']){?>
+          <a href="/via_uy/src/views/user/admin/dashboard.php"><i class="fa-solid fa-code"></i> Dessarrollador</a>
+          <?php }?>
         <?php else: ?>
           <a href="/via_uy/src/views/user/login.php"><i class="fa-solid fa-right-to-bracket"></i> Iniciar Sesión</a>
           <a href="/via_uy/src/views/user/signup.php"><i class="fa-solid fa-user-plus"></i> Registrarse</a>

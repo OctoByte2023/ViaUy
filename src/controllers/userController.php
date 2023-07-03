@@ -3,6 +3,10 @@ $dir = "c://xampp/htdocs/via_uy/";
 require_once($dir . '/src/models/userModel.php');
 
 class UserController {
+    public function __construct(){
+        require_once('c://xampp/htdocs/via_uy/src/models/userModel.php');
+        $this->model =  new userModel();
+    }
     public static function handleSignup($postData) {
         $message = '';
         if (!empty($postData['email']) && !empty($postData['username']) && !empty($postData['password']) && !empty($postData['verify-password'])) {
@@ -80,6 +84,42 @@ class UserController {
                 $message = '<i class="message-error">Email o contraseña incorrecta</i>';
             }
             return $message;
+        }
+    }
+
+    public function show($id) {
+        $user = $this->model->show($id);
+    
+        if ($user !== false) {
+            return $user;
+        } else {
+            header("Location: dashboard.php");
+            exit();
+        }
+    }
+    public function index() {
+        $result = $this->model->index();
+        
+        if ($result) {
+            return $result;
+        } else {
+            return false;
+        }
+    }
+
+    public function update($id, $esAdmin) {
+        if ($this->model->update($id, $esAdmin)) {
+            header("Location: dashboard.php");
+        } else {
+            header("Location: index.php");
+        }
+    }        
+
+    public function delete($id) {
+        if ($this->model->delete($id)) {
+            header("Location: dashboard.php");
+        } else {
+            header("Location: show.php?id=" . $id);
         }
     }
        
