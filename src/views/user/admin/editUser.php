@@ -1,7 +1,7 @@
 <?php
      
     $dir= "c://xampp/htdocs/via_uy/";
-    require_once($dir."src/views/partials/head.php");
+    require_once($dir."src/views/user/admin/partials/estructure.php");
     require_once($dir."src/controllers/userController.php");
 
     // Redirigir al formulario de inicio de sesión si no hay sesión activa o el usuario no es administrador
@@ -39,5 +39,5 @@
 </script>
 
 <?php
-    require_once($dir."src/views/partials/footer.php");
+    require_once($dir."src/views/user/admin/partials/endEstructure.php");
 ?>
