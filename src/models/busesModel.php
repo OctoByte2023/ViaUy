@@ -54,5 +54,17 @@
             return $statement->execute();
         }        
 
+        public function searchByModel($searchTerm) {
+            $statement = $this->PDO->prepare("SELECT * FROM buses WHERE modelo LIKE :searchTerm");
+            $searchTerm = '%' . $searchTerm . '%'; // Agregamos caracteres de comodín para buscar coincidencias parciales
+            $statement->bindParam(":searchTerm", $searchTerm);
+            
+            if ($statement->execute()) {
+                return $statement->fetchAll();
+            } else {
+                return false;
+            }
+        }
+        
     }
 ?>

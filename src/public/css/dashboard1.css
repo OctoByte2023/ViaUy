@@ -28,6 +28,7 @@
 }
 body{
     background-color: var(--color7);
+    width: 100vw;
 }
 .dashboard-body{
     padding-left: calc(var(--aside-w) + 10px);
@@ -117,7 +118,7 @@ body{
     background-color: var(--color6);
     box-shadow: var(--shadow);
     position: fixed;
-    width: calc(99% - var(--aside-w));
+    width: calc(98% - var(--aside-w));
     height: var(--header-h);
     left: var(--aside-w);
     display: flex;

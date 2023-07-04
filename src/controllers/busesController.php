@@ -50,6 +50,17 @@
                 header("Location: show.php?id=" . $id);
             }
         }
+
+        public function searchByModel($searchTerm) {
+            $result = $this->model->searchByModel($searchTerm);
+            
+            if ($result) {
+                return $result;
+            } else {
+                return false;
+            }
+        }
+        
         
     }
 ?>
