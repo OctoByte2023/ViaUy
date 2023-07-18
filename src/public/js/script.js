@@ -12,6 +12,8 @@ $("#header-btns-search").on("click", openHeaderSearch);
 
 function openHeaderSearch() {
     headerSearchForm.toggleClass("header-search-form-open");
+    headerSearchForm.focus();
+    headerSearchForm.select();
 }
 function openHeaderMenu() {
     if(queEs == false){

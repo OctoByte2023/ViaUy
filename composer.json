@@ -1,0 +1,16 @@
+{
+    "license": "proprietary",
+    "name": "octobyte/via_uy",
+    "description": "Bus app",
+    "autoload": {
+        "psr-4": {
+            "Octobyte\\ViaUy\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Benjamin Rosano, Facundo Gasco Dante Caraballo, Sabrina Duran"
+        }
+    ],
+    "require": {}
+}

@@ -29,7 +29,6 @@
         <li class="aside-links-li">
             <ul class="aside-links-li-ul">
                     <li class="aside-links-li-ul-li"><a href="" class="aside-links-li-ul-li-a"><i class="fa-solid fa-users"></i>Clientes</a></li>
-                    <li class="aside-links-li-ul-li"><a href="" class="aside-links-li-ul-li-a"><i class="fa-solid fa-copyright"></i>Empresas</a></li>
                     <li class="aside-links-li-ul-li"><a href="" class="aside-links-li-ul-li-a"><i class="fa-sharp fa-solid fa-gears"></i>Administradores</a></li>
             </ul>
         </li>
@@ -47,6 +46,13 @@
             <li class="aside-links-li-ul-li"><a href="" class="aside-links-li-ul-li-a"><i class="fa-solid fa-home"></i>Inicio</a></li>
                     <li class="aside-links-li-ul-li"><a href="" class="aside-links-li-ul-li-a"><i class="fa-solid fa-tag"></i>Ofertas</a></li>
                     <li class="aside-links-li-ul-li"><a href="" class="aside-links-li-ul-li-a"><i class="fa-solid fa-circle-info"></i>Ayuda</a></li>
+            </ul>
+        </li>
+        <p class="aside-links-subtitle">Empresas</p>
+        <li class="aside-links-li">
+            <ul class="aside-links-li-ul">
+                <li class="aside-links-li-ul-li"><a href="" class="aside-links-li-ul-li-a"><i class="fa-solid fa-copyright"></i>Empresas</a></li>
+                <li class="aside-links-li-ul-li"><a href="" class="aside-links-li-ul-li-a"><i class="fa-solid fa-hourglass-start"></i>Solicitudes</a></li>
             </ul>
         </li>
     </ul>
