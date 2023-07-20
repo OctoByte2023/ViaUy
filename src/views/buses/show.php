@@ -1,10 +1,14 @@
 <?php
-    $dir= "c://xampp/htdocs/via_uy/";
+    require_once '../../../vendor/autoload.php';
 
-    require_once($dir."src/views/partials/head.php");
-    require_once($dir."src/controllers/busesController.php");
-    $obj = new busesController();
-    $date = $obj->show($_GET['id']);
+    require_once '../partials/head.php';
+
+    // Utiliza el namespace y la ruta relativa adecuada para acceder al archivo de controlador
+    use Octobyte\ViaUy\Controllers\busesController; 
+
+    // Crea una instancia del controlador de autobuses y llama al método show
+    $busesController = new busesController();
+    $date = $busesController->show($_GET['id']);
 ?>
 <h2 class="text-center">Detalles del Registro</h2>
 <section class="pb-3">
@@ -12,7 +16,6 @@
     <a href="edit.php?id=<?= $date["id"]?>" class="normal-btn success">Actualizar</a>
     <a href="delete.php?id=<?= $date["id"]?>" class="normal-btn danger">Eliminar</a>
 </section>
-
 
 <table class="table container-fluid">
     <thead>
@@ -29,7 +32,6 @@
     </tbody>
 </table>
 
-
 <?php
-    require_once($dir."src/views/partials/footer.php");
+    require_once '../partials/footer.php';
 ?>

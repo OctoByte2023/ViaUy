@@ -1,15 +1,20 @@
 <?php
-   $dir = "c://xampp/htdocs/via_uy/";
-   require_once($dir."src/views/partials/head.php");   
+    // Incluir el autoloader de Composer para cargar automáticamente las clases
+    require_once '../../../vendor/autoload.php';
+
+
+    // Incluir el archivo de cabecera
+    require_once '../partials/head.php';   
+
     if (isset($_SESSION['user_id'])) {
         header('Location: /via_uy');
         exit();
     }
    
-   require_once($dir.'/config/db.php');
-   require_once($dir.'/src/controllers/userController.php');
+    require_once '../../../config/db.php';
+    require_once '../../../src/controllers/userController.php';
    
-   $message = UserController::handleSignup($_POST);
+    $message = UserController::handleSignup($_POST);
 ?>
 
 <section class="login-container">
@@ -37,5 +42,5 @@
 </section>
 
 <?php
-    require_once($dir."src/views/partials/footer.php");
+    require_once '../partials/footer.php';
 ?>

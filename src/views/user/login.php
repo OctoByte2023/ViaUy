@@ -1,14 +1,22 @@
 <?php
-$dir = "c://xampp/htdocs/via_uy/";
-require_once($dir.'/src/controllers/userController.php');
-require_once($dir . "src/views/partials/head.php");
-if (isset($_SESSION['user_id'])) {
-    header('Location: /via_uy');
-    exit();
-}
+    // Incluir el autoloader de Composer para cargar automáticamente las clases
+    require_once '../../../vendor/autoload.php';
 
-UserController::handleLogin();
-$message = UserController::handleLogin();
+    // Incluir el archivo de cabecera
+    require_once '../partials/head.php';
+
+    if (isset($_SESSION['user_id'])) {
+        header('Location: /via_uy');
+        exit();
+    }
+   
+    // Nota: En este punto, asumimos que el archivo "db.php" está en el mismo directorio que "userController.php".
+    // Si está en otro directorio, ajusta la ruta de acuerdo a tu estructura de carpetas.
+    require_once '../../../config/db.php';
+    require_once '../../../src/controllers/userController.php';
+   
+    UserController::handleLogin();
+    $message = UserController::handleLogin();
 ?>
 
 <section class="login-container">
@@ -52,5 +60,5 @@ $message = UserController::handleLogin();
 </script>
 
 <?php
-require_once($dir . "src/views/partials/footer.php");
+require_once '../partials/footer.php';
 ?>

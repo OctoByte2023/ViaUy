@@ -1,9 +1,14 @@
 <?php
-  session_start();
+    // Incluir el autoloader de Composer para cargar automáticamente las clases
+    require_once '../../../vendor/autoload.php';
 
-  session_unset();
-  session_destroy();
+    session_start();
 
+    // Desactivar y destruir la sesión actual
+    session_unset();
+    session_destroy();
 
-  header('Location: /via_uy/src/views/user/login.php');
-  ?>
+    // Redireccionar a la página de inicio de sesión
+    header('Location: /via_uy/src/views/user/login.php');
+    exit();
+?>

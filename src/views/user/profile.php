@@ -1,6 +1,9 @@
 <?php
-    $dir= "c://xampp/htdocs/via_uy/";
-    require_once($dir."src/views/partials/head.php");
+    // Incluir el autoloader de Composer para cargar automáticamente las clases
+    require_once '../../../vendor/autoload.php';
+
+    // Incluir el archivo de cabecera
+    require_once '../../views/partials/head.php';
   
     if (isset($_SESSION['user_id'])) {
         $userId = $_SESSION['user_id'];
@@ -12,18 +15,16 @@
     }
 ?>
 
-
 <h1>Perfil de Usuario</h1>
 
-<p><?= $userEmail?></p>
-<p><?= $userName?></p>
-<p><?= $userId?></p>
+<p><?= $userEmail ?></p>
+<p><?= $userName ?></p>
+<p><?= $userId ?></p>
 
-<?php if ($_SESSION['esAdmin']){?>
+<?php if ($_SESSION['esAdmin']): ?>
     <h2>Es Admin</h2>
-<?php } ?>
+<?php endif; ?>
 
 <?php
-    require_once($dir."src/views/partials/footer.php");
-
+    require_once '../../views/partials/footer.php';
 ?>
