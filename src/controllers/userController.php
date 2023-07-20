@@ -1,12 +1,18 @@
 <?php
-$dir = "c://xampp/htdocs/via_uy/";
-require_once($dir . '/src/models/userModel.php');
+namespace Octobyte\ViaUy\Controllers;
+
+use Octobyte\ViaUy\Models\UserModel;
+use Octobyte\ViaUy\Controllers\busesController; 
 
 class UserController {
-    public function __construct(){
-        require_once('c://xampp/htdocs/via_uy/src/models/userModel.php');
-        $this->model =  new userModel();
+    private $model;
+
+    public function __construct() {
+        // Utiliza el autoloader de Composer para cargar el modelo automáticamente
+        require_once __DIR__ . '/../models/UserModel.php';
+        $this->model = new UserModel();
     }
+
     public static function handleSignup($postData) {
         $message = '';
         if (!empty($postData['email']) && !empty($postData['username']) && !empty($postData['password']) && !empty($postData['verify-password'])) {
@@ -44,49 +50,21 @@ class UserController {
     }
 
     public static function handleLogin() {
-        $dir = "c://xampp/htdocs/via_uy/";
-        require_once($dir . '/config/db.php');
+        session_start();
     
-        $db = new db();
-        $conn = $db->conexion();
-    
-        if (!empty($_POST['email']) && !empty($_POST['password'])) {
-            $loginInput = $_POST['email'];
-            $isEmail = filter_var($loginInput, FILTER_VALIDATE_EMAIL);
-    
-            $username = '';
-    
-            if ($isEmail) {
-                // Login con email
-                $records = $conn->prepare('SELECT id, email, password, esAdmin, username FROM users WHERE email = :loginInput');
-                $records->bindParam(':loginInput', $loginInput);
-                $records->execute();
-            } else {
-                // Login con nombre de usuario
-                $username = '@' . $loginInput;
-                $records = $conn->prepare('SELECT id, email, password, esAdmin, username FROM users WHERE username = :username');
-                $records->bindParam(':username', $username);
-                $records->execute();
-            }
-    
-            $results = $records->fetch(PDO::FETCH_ASSOC);
-    
-            $message = '';
-    
-            if (is_array($results) && count($results) > 0 && password_verify($_POST['password'], $results['password'])) {
-                $_SESSION['user_id'] = $results['id'];
-                $_SESSION['user_email'] = $results['email'];
-                $_SESSION['user_name'] = $results['username'];
-                $_SESSION['esAdmin'] = (bool) $results['esAdmin'];
-                header('Location: /via_uy/src/views/buses/create.php');
-                exit;
-            } else {
-                $message = '<i class="message-error">Email o contraseña incorrecta</i>';
-            }
-            return $message;
+        // Redirigir al formulario de inicio de sesión si no hay sesión activa o el usuario no es administrador
+        if (!isset($_SESSION['user_id']) || !isset($_SESSION['esAdmin']) || !$_SESSION['esAdmin']) {
+            header('Location: /via_uy');
+            exit(); // El usuario no es administrador o no ha iniciado sesión
         }
+    
+        // Utiliza el namespace y la ruta relativa adecuada para acceder al archivo de controlador
+    
+        // Crea una instancia del controlador de autobuses y llama al método delete
+        $busesController = new busesController();
+        $busesController->delete($_GET['id']);
     }
-
+    
     public function show($id) {
         $user = $this->model->show($id);
     
@@ -97,6 +75,7 @@ class UserController {
             exit();
         }
     }
+    
     public function index() {
         $result = $this->model->index();
         
@@ -106,7 +85,7 @@ class UserController {
             return false;
         }
     }
-
+    
     public function update($id, $esAdmin) {
         if ($this->model->update($id, $esAdmin)) {
             header("Location: dashboard.php");
@@ -114,7 +93,7 @@ class UserController {
             header("Location: index.php");
         }
     }        
-
+    
     public function delete($id) {
         if ($this->model->delete($id)) {
             header("Location: dashboard.php");

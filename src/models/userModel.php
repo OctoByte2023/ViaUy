@@ -1,12 +1,16 @@
 <?php
-$dir = "c://xampp/htdocs/via_uy/";
+namespace Octobyte\ViaUy\Models;
 
-require_once($dir.'/config/db.php');
+use \PDO;
+use \PDOException;
+use Octobyte\ViaUy\Config\db;
 
 class UserModel {
     private $conn;
 
     public function __construct() {
+        // Utiliza el autoloader de Composer para cargar la clase de configuración de la base de datos
+        require_once __DIR__ . '/../../config/db.php';
         $db = new db();
         $this->conn = $db->conexion();
     }
@@ -34,40 +38,43 @@ class UserModel {
 
         return $stmt->execute();
     }
+
     public function index() {
         $statement = $this->conn->prepare("SELECT * FROM users");
-        
+
         if ($statement->execute()) {
             return $statement->fetchAll();
         } else {
             return false;
         }
     }
+
     public function show($id) {
         $statement = $this->conn->prepare("SELECT * FROM users WHERE id = :id LIMIT 1");
         $statement->bindParam(":id", $id, PDO::PARAM_INT);
         $statement->execute();
         $result = $statement->fetch(PDO::FETCH_ASSOC);
-    
+
         return ($result !== false) ? $result : false;
     }
+
     public function update($id, $esAdmin) {
         $statement = $this->conn->prepare("UPDATE users SET esAdmin = :esAdmin WHERE id = :id");
         $statement->bindParam(":esAdmin", $esAdmin);
         $statement->bindParam(":id", $id);
-    
+
         if ($statement->execute()) {
             return $id;
         } else {
             return false;
         }
     }
-    
+
     public function delete($id) {
         $statement = $this->conn->prepare("DELETE FROM users WHERE id = :id");
         $statement->bindParam(":id", $id);
-    
+
         return $statement->execute();
-    }    
+    }
 }
 ?>
