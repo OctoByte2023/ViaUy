@@ -1,5 +1,7 @@
 <?php
-require_once('c://xampp/htdocs/via_uy/src/controllers/busesController.php');
+require_once '../../../vendor/autoload.php';
+
+use Octobyte\ViaUy\Controllers\busesController;
 $busesController = new busesController();
 
 $searchTerm = isset($_GET['search']) ? $_GET['search'] : '';
