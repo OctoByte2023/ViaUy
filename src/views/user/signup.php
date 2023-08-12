@@ -12,7 +12,7 @@
     }
    
     require_once '../../../config/db.php';
-    require_once '../../../src/controllers/userController.php';
+    use Octobyte\ViaUy\Controllers\userController;
    
     $message = UserController::handleSignup($_POST);
 ?>
