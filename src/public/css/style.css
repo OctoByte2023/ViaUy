@@ -247,3 +247,39 @@ button{
 
 
 
+
+
+/* hero start */
+.hero{
+    background-color:#ffffff;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    padding: 10px;
+    height: max-content;
+}
+
+.hero-form{
+    background-color: rgb(238, 203, 203);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    width: 50%;
+}
+.hero-txt{
+    font-weight:900 ;
+    font-size: 2em;
+    border-radius: 10px;
+    width: 50%;
+    color: var(--main-font-color);
+    margin: 10px;
+    padding: 10px;
+}
+
+#hero-txt-span {
+    font-size: 1em;
+    color: var(--main-a-h-color);
+    display: inline-block;
+    opacity: 1;
+}
+/* hero end */

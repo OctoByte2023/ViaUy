@@ -5,9 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ViaUy</title>
-    <link rel="stylesheet" href="/via_uy/src/public/css/styles.css">
+    <link rel="stylesheet" href="/via_uy/src/public/css/style.css">
     <link rel="stylesheet" href="/via_uy/src/public/css/pre.css">
     <link rel="stylesheet" href="/via_uy/src/public/css/responsive2.css">
+    <script src="/via_uy/src/public/js/jquery-3.7.0.min.js"></script>
     <script src="https://kit.fontawesome.com/d1b7ca4fc4.js" crossorigin="anonymous"></script>
   </head>
   <body>
