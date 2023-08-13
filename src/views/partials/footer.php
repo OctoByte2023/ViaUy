@@ -1,7 +1,7 @@
     </section>
 
 
-
+    <h1>Footer</h1>
     
 
     <script src="/via_uy/src/public/js/jquery-3.7.0.min.js"></script>

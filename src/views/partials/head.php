@@ -1,6 +1,4 @@
-<?php
-       session_start();
-?>
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -15,20 +13,20 @@
   <body>
 
     <header class="header">
-      <div class="header-logo-bar">
+      <nav class="header-logo-bar">
 
         <button class="header-bars" id="header-bars">
-          <i class="fa-solid fa-bars"></i>  
+          <i class="fa-solid fa-bars"></i>
         </button>
-        <div class="header-logo">
-        <a href="/via_uy" class="header-logo-a">Via<span class="blue-c" >Uy</span></a>
-      </div>
-      </div>
+        <h1 class="header-logo">
+          <a href="/via_uy" class="header-logo-a">Via<span class="blue-c">Uy</span></a>
+        </h1>
+      </nav>
       <nav class="header-links" id="header-links">
         <ul class="header-links-ul">
           <li class="header-links-li">
             <button class="header-ul-bars" id="header-ul-bars">
-              <i class="fa-solid fa-x"></i>  
+              <i class="fa-solid fa-x"></i>
             </button>
           </li>
           <li class="header-links-li"><a href="">Inicio</a></li>
@@ -47,36 +45,35 @@
           </li>
         </ul>
       </nav>
-      
-      <div class="header-btns">
-      <form class="header-search-form" id="header-search-form" action="/via_uy/src/views/buses/search.php" method="GET">
-        <input placeholder="Buscar..." type="search" name="search" class="header-search-input normal-input" id="header-search-input">
-        <button type="submit" class="header-search-btn">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-      </form>  
+
+      <section class="header-btns">
+        <form class="header-search-form" id="header-search-form" action="/via_uy/src/views/buses/search.php" method="GET">
+          <input placeholder="Buscar..." type="search" name="search" class="header-search-input normal-input" id="header-search-input">
+          <button type="submit" class="header-search-btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
         <button class="header-btns-search" id="header-btns-search">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
         <button class="header-btns-btn" id="open-user-options">
           <i class="fa-regular fa-user"></i>
         </button>
-        <div class="user-options" id="user-options">
-        <?php if (isset($_SESSION['user_id'])): ?>
-          <a href="/via_uy/src/views/user/profile.php" title="<?= $_SESSION['user_name']?>"><?= $_SESSION['user_name']?></a> <br>
-          <a href="/via_uy/src/views/user/logout.php"><i class="fa-solid fa-sign-out"></i> Cerrar Sesión</a>
-          <?php if ($_SESSION['esAdmin']){?>
-          <a href="/via_uy/src/views/user/admin/dashboard.php"><i class="fa-solid fa-code"></i> Dessarrollador</a>
-          <?php }?>
-        <?php else: ?>
-          <a href="/via_uy/src/views/user/login.php"><i class="fa-solid fa-right-to-bracket"></i> Iniciar Sesión</a>
-          <a href="/via_uy/src/views/user/signup.php"><i class="fa-solid fa-user-plus"></i> Registrarse</a>
-        <?php endif; ?>
-        </div>
+        <nav class="user-options" id="user-options">
+          <?php if (isset($_SESSION['user_id'])): ?>
+            <a href="/via_uy/src/views/user/profile.php" title="<?= $_SESSION['user_name'] ?>"><?= $_SESSION['user_name'] ?></a> <br>
+            <a href="/via_uy/src/views/user/logout.php"><i class="fa-solid fa-sign-out"></i> Cerrar Sesión</a>
+            <?php if ($_SESSION['esAdmin']): ?>
+              <a href="/via_uy/src/views/user/admin/dashboard.php"><i class="fa-solid fa-code"></i> Dessarrollador</a>
+            <?php endif; ?>
+          <?php else: ?>
+            <a href="/via_uy/src/views/user/login.php"><i class="fa-solid fa-right-to-bracket"></i> Iniciar Sesión</a>
+            <a href="/via_uy/src/views/user/signup.php"><i class="fa-solid fa-user-plus"></i> Registrarse</a>
+          <?php endif; ?>
+        </nav>
 
-      </div>
+          </section>
 
     </header>
-
 
     <section class="container-fluid">

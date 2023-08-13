@@ -51,7 +51,6 @@ class UserController {
     }
 
     public static function handleLogin() {
-        $dir = "c://xampp/htdocs/via_uy/";
     
         $db = new db();
         $conn = $db->conexion();
