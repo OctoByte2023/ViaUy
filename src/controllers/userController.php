@@ -129,6 +129,27 @@ class UserController {
             header("Location: show.php?id=" . $id);
         }
     }
+
+    
+    public static function showByUsername($username) {
+        $userModel = new UserModel();
+        $user = $userModel->getUserByUsername($username);
+        
+        if ($user !== false) {
+            return $user;
+        } else {
+            return false;
+        }
+    }
+
+    public static function checkUsernameExistence($username) {
+        $userModel = new UserModel();
+        $user = $userModel->getUserByUsername($username);
+    
+        return ($user !== false);
+    }
+    
+    
        
 }
 ?>

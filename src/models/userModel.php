@@ -76,5 +76,15 @@ class UserModel {
 
         return $statement->execute();
     }
+
+    public function getUserByUsername($username) {
+        $statement = $this->conn->prepare("SELECT * FROM users WHERE username = :username LIMIT 1");
+        $statement->bindParam(":username", $username, PDO::PARAM_STR);
+        $statement->execute();
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+    
+        return ($result !== false) ? $result : false;
+    }
+    
 }
 ?>

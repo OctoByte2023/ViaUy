@@ -1,1 +1,9 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^user/([^/]+)/?$ src/views/company/profile.php?username=$1 [QSA,L]
+RewriteRule ^company/petition/?$ route.php?route=company/petition [QSA,L]
+
+
+
 ErrorDocument 404 /via_uy/404.php
