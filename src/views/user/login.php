@@ -19,7 +19,7 @@
 ?>
 
 <section class="login-container">
-    <form action="login.php" class="login-form" method="POST" autocomplete="off">
+    <form action="/via_uy/src/views/user/login.php" class="login-form" method="POST" autocomplete="off">
         <h2 class="login-form-title">Iniciar Sesion</h2>
         <?php if (!empty($message)) : ?>
             <p><?= $message ?></p>

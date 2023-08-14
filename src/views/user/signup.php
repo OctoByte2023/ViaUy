@@ -18,7 +18,7 @@
 ?>
 
 <section class="login-container">
-    <form action="signup.php" class="login-form" method="POST" autocomplete="off">
+    <form action="/via_uy/src/views/user/signup.php" class="login-form" method="POST" autocomplete="off">
         <h2 class="login-form-title">Registrarte</h2>
         <?php if(!empty($message)): ?>
           <p> <?= $message ?></p>
