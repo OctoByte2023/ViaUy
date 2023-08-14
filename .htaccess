@@ -1,9 +1,20 @@
+# Habilitar la reescritura de URLs
 RewriteEngine On
+
+
+# Redireccionar URLs de perfil de usuario
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^user/([^/]+)/?$ src/views/company/profile.php?username=$1 [QSA,L]
-RewriteRule ^company/petition/?$ route.php?route=company/petition [QSA,L]
+RewriteRule ^user/([^/]+)/?$ src/routes/userRoutes.php?route=user/&username=$1 [QSA,L]
+RewriteRule ^login/?$ src/routes/userRoutes.php?route=login [QSA,L]
 
+# Redireccionar URL de petición de la compañía
+RewriteRule ^company/petition/?$ src/routes/companyRoutes.php?route=company/petition [QSA,L]
 
+# Redireccionar URLs de perfil de compañía
+RewriteRule ^company/profile/([^/]+)/?$ src/routes/companyRoutes.php?route=company/profile&username=$1 [QSA,L]
 
+# Configurar página de error 404 personalizada
 ErrorDocument 404 /via_uy/404.php
+
+
