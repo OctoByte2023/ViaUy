@@ -197,10 +197,32 @@ button{
     width: 300px;
     padding: 20px 0px;
 }
-.toggle-password-l{
-    position: fixed;
-    height: 40px;
-    margin: 0px 10px;
+.password-container {
+    display: flex;
+    align-items: center;
+}
+.password-container {
+    position: relative; /* Agregamos esta propiedad */
+}
+
+.login-input-password {
+    padding-right: 40px; /* Agregamos espacio para el ícono */
+}
+
+.toggle-password-l {
+    position: absolute;
+    right: 10px; /* Ajusta la posición según sea necesario */
+    top: 30%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--main-font-color);
+    font-size: 1.2em;
+    transition: color var(--time);
+}
+
+
+.toggle-password-l:hover {
+    color: var(--color1);
 }
 .toggle-password{
     display: none;
@@ -283,3 +305,49 @@ button{
     opacity: 1;
 }
 /* hero end */
+
+
+
+
+/* footer start */
+.footer {
+    background-color: var(--color4);
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    color: var(--main-font-color);
+  }
+  
+  .footer-links {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer-links-title {
+    margin: 10px 0px;
+    font-weight: 900;
+    font-size: 1.3em;
+    text-transform: capitalize;
+    padding: 0px;
+  }
+  
+  .footer-links-a {
+    color: var(--main-font-color);
+  }
+  
+  .footer-links-a:hover {
+    color: var(--main-a-h-color);
+  }
+  
+  .footer-links-container {
+    justify-content: space-around;
+    display: flex;
+  }
+  
+  .footer-cr {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* footer end */
