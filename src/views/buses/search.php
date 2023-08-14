@@ -15,6 +15,7 @@ require_once('../partials/head.php');
     <?php if (!empty($rows)): ?>
         <?php foreach ($rows as $row): ?>
             <br>
+            <a href="show.php?id=<?= $row[0] ?>" class="normal-btn save">Ver</a>
             <b>Modelo: <?= $row['modelo'] ?></b>
             <br>
         <?php endforeach; ?>

@@ -12,9 +12,13 @@
 ?>
 <h2 class="text-center">Detalles del Registro</h2>
 <section class="pb-3">
-    <a href="index.php" class="normal-btn save">Regresar</a>
-    <a href="edit.php?id=<?= $date["id"]?>" class="normal-btn success">Actualizar</a>
-    <a href="delete.php?id=<?= $date["id"]?>" class="normal-btn danger">Eliminar</a>
+        <?php if (isset($_SESSION['user_id'])): ?>
+        <?php if ($_SESSION['esAdmin']): ?>
+                <a href="index.php" class="normal-btn save">Regresar</a>
+                <a href="edit.php?id=<?= $date["id"]?>" class="normal-btn success">Actualizar</a>
+                <a href="delete.php?id=<?= $date["id"]?>" class="normal-btn danger">Eliminar</a>
+        <?php endif; ?>
+        <?php endif; ?>
 </section>
 
 <table class="table container-fluid">
