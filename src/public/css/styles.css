@@ -11,9 +11,20 @@
     --main-a-h-color:#1b5f9e;
     --color1:#3093EE;
     --main-color-hover:rgb(40, 118, 207);
+    --body-bg:#f5f5f5;
+
+
     --time: .3s;
     --shadow:0px 5px 5px rgba(18, 1, 1, 0.045);
 }
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--body-bg);
+    margin: 0;
+    padding: 0;
+}
+
 a{
     color: var(--main-font-color);
 }
@@ -351,3 +362,103 @@ button{
   }
   
   /* footer end */
+
+
+  /* company start */
+        .page-title {
+            color: #333;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .page-description {
+            color: #666;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .company-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .form-label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .form-textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            resize: none; /* Evita la redimensión del textarea */
+        }
+        .form-submit {
+            background-color: #007bff;
+            color: #fff;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .form-submit:hover {
+            background-color: #0056b3;
+        }
+/* company end */
+
+
+
+/* search.php start */
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+.search-results {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+}
+.result-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+.result-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 14px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.btn:hover {
+    background-color: #0056b3;
+}
+/* search end */

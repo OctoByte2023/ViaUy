@@ -41,6 +41,9 @@
     <p>¿Ya tienes una cuenta? <a href="/via_uy/src/views/user/login.php">Iniciar Sesión</a></p>
 </section>
 
+<script>
+    cambiarTitulo("ViaUy | Registrarse")
+</script>
 <?php
     require_once '../partials/footer.php';
 ?>

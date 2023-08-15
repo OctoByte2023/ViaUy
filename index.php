@@ -8,3 +8,6 @@
 
     require_once 'src/views/partials/footer.php';
 ?>
+<script>
+        cambiarTitulo("ViaUy | Inicio");
+</script>

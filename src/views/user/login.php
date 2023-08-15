@@ -56,6 +56,8 @@
             toggleIcon2.style.display = 'none';
         }
     });
+
+    cambiarTitulo("ViaUy | Login");
 </script>
 
 <?php

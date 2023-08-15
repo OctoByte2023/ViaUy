@@ -7,9 +7,9 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^user/([^/]+)/?$ src/routes/userRoutes.php?route=user/&username=$1 [QSA,L]
 RewriteRule ^login/?$ src/routes/userRoutes.php?route=login [QSA,L]
+RewriteRule ^help/?$ help.php?route=help [QSA,L]
 
 # Redireccionar URL de petición de la compañía
-RewriteRule ^company/petition/?$ src/routes/companyRoutes.php?route=company/petition [QSA,L]
 
 # Redireccionar URLs de perfil de compañía
 RewriteRule ^company/profile/([^/]+)/?$ src/routes/companyRoutes.php?route=company/profile&username=$1 [QSA,L]

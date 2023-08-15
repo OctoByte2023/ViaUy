@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ViaUy</title>
-    <link rel="stylesheet" href="/via_uy/src/public/css/style.css">
+    <link rel="stylesheet" href="/via_uy/src/public/css/styles.css">
     <link rel="stylesheet" href="/via_uy/src/public/css/pre.css">
     <link rel="stylesheet" href="/via_uy/src/public/css/responsive2.css">
     <script src="/via_uy/src/public/js/jquery-3.7.0.min.js"></script>
@@ -65,7 +65,7 @@
         </button>
         <nav class="user-options" id="user-options">
           <?php if (isset($_SESSION['user_id'])): ?>
-            <a href="/via_uy/src/views/user/profile.php" title="<?= $_SESSION['user_name'] ?>"><?= $_SESSION['user_name'] ?></a> <br>
+            <a href="/via_uy/src/views/user/mainProfile.php" title="<?= $_SESSION['user_name'] ?>"><?= $_SESSION['user_name'] ?></a> <br>
             <a href="/via_uy/src/views/user/logout.php"><i class="fa-solid fa-sign-out"></i> Cerrar Sesión</a>
             <?php if ($_SESSION['esAdmin']): ?>
               <a href="/via_uy/src/views/user/admin/dashboard.php"><i class="fa-solid fa-code"></i> Dessarrollador</a>
@@ -80,4 +80,13 @@
 
     </header>
 
+    
+    <script>
+        function cambiarTitulo(nuevoTitulo) {
+            document.title = nuevoTitulo;
+        }
+    </script>
     <section class="container-fluid">
+
+
+    
