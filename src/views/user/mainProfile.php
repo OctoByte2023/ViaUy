@@ -12,11 +12,14 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 ?>
-
-<h1>Informacion Personal:</h1>
-<p><b>Nombre: </b><?= $_SESSION['user_name']?></p>
-<p><b>Email: </b><?= $_SESSION['user_email']?></p>
-
+<div class="profile-container">
+        <h1 class="profile-title">Información Personal:</h1>
+        <div class="profile-info">
+            <p><span class="profile-label">Nombre:</span> <?= $_SESSION['user_name'] ?></p>
+            <p><span class="profile-label">Email:</span> <?= $_SESSION['user_email'] ?></p>
+            <!-- Agrega más información personal si es necesario -->
+    </div>
+</div>
 
 <script>
     cambiarTitulo("ViaUy | <?=$_SESSION['user_name']?>")
